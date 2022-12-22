@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../utils/image/app_image.dart';
 import '../../utils/theme/app_theme.dart';
+import '../home/home_page.dart';
 
 class AppSplash extends StatefulWidget {
   const AppSplash({Key? key}) : super(key: key);
@@ -11,6 +12,19 @@ class AppSplash extends StatefulWidget {
 }
 
 class _AppSplashState extends State<AppSplash> {
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 6), (() {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomePage(),
+        ),
+      );
+    }));
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
