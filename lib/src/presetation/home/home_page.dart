@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/image/app_image.dart';
+import 'widget/header_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
             color: Colors.black,
           ),
           const SizedBox(
-            width: 90,
+            width: 85,
           ),
           Image.asset(AppImage.logo),
           const SizedBox(
@@ -32,7 +33,17 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-      body: Container(),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Stack(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [HeaderWidget()],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
