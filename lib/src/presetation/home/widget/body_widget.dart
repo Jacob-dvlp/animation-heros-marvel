@@ -41,10 +41,10 @@ class _BodyWidgetState extends State<BodyWidget> {
                 MoviesMarvelModel marvelModel = repository.marvelModel[index];
 
                 return TweenAnimationBuilder<double>(
-                    curve: Curves.bounceInOut,
+                    curve: Curves.ease,
                     duration: duration,
                     tween: currentIndex == index
-                        ? Tween(begin: 1, end: 1)
+                        ? Tween(begin: 1, end: 1.2)
                         : Tween(begin: 1, end: 1),
                     builder: (context, value, child) {
                       return Transform.scale(
@@ -69,10 +69,10 @@ class _BodyWidgetState extends State<BodyWidget> {
 
                 return Center(
                   child: TweenAnimationBuilder<double>(
-                      curve: Curves.bounceInOut,
+                      curve: Curves.linear,
                       duration: duration,
                       tween: currentIndex == index
-                          ? Tween(begin: 2, end: 1.3)
+                          ? Tween(begin: 2, end: 1.4)
                           : Tween(begin: 1, end: 1),
                       builder: (context, value, child) {
                         return Transform.scale(
