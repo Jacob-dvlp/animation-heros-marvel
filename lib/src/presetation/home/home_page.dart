@@ -22,7 +22,9 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             width: 85,
           ),
-          Image.asset(AppImage.logo),
+          Image.asset(
+            AppImage.logo,
+          ),
           const SizedBox(
             width: 85,
           ),

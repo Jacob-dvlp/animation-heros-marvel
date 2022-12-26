@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../models/marvel_movies_model.dart';
 import '../../../repositorys/repository.dart';
+import '../../widget/custom_widget_background.dart';
+import '../../widget/custom_widget_card.dart';
 
 class BodyWidget extends StatefulWidget {
   const BodyWidget({Key? key}) : super(key: key);
@@ -39,28 +41,19 @@ class _BodyWidgetState extends State<BodyWidget> {
                 MoviesMarvelModel marvelModel = repository.marvelModel[index];
 
                 return TweenAnimationBuilder<double>(
-                  curve: Curves.bounceInOut,
-                  duration: const Duration(milliseconds: 1800),
-                  tween: currentIndex == index
-                      ? Tween(begin: 1, end: 1.4)
-                      : Tween(begin: 1, end: 1),
-                  builder: (context, value, child) {
-                    return Transform.scale(
-                      alignment: Alignment.center,
-                      scale: value,
-                      child: child,
-                    );
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage(marvelModel.name),
-                      fit: BoxFit.cover,
-                      colorFilter: const ColorFilter.mode(
-                          Colors.black45, BlendMode.darken),
-                    )),
-                  ),
-                );
+                    curve: Curves.bounceInOut,
+                    duration: duration,
+                    tween: currentIndex == index
+                        ? Tween(begin: 1, end: 1)
+                        : Tween(begin: 1, end: 1),
+                    builder: (context, value, child) {
+                      return Transform.scale(
+                        alignment: Alignment.center,
+                        scale: value,
+                        child: child,
+                      );
+                    },
+                    child: CustomWidgetBackground(imagem: marvelModel.name));
               }),
           PageView.builder(
               itemCount: 8,
@@ -76,32 +69,19 @@ class _BodyWidgetState extends State<BodyWidget> {
 
                 return Center(
                   child: TweenAnimationBuilder<double>(
-                    curve: Curves.elasticOut,
-                    duration: const Duration(milliseconds: 1800),
-                    tween: currentIndex == index
-                        ? Tween(begin: 1, end: 1.2)
-                        : Tween(begin: 1, end: 1),
-                    builder: (context, value, child) {
-                      return Transform.scale(
-                        alignment: Alignment.center,
-                        scale: value,
-                        child: child,
-                      );
-                    },
-                    child: Container(
-                      height: 350,
-                      width: 200,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: Colors.white, width: 2),
-                          boxShadow: const [
-                            BoxShadow(blurRadius: 10),
-                          ],
-                          image: DecorationImage(
-                              image: AssetImage(marvelModel.name),
-                              fit: BoxFit.cover)),
-                    ),
-                  ),
+                      curve: Curves.bounceInOut,
+                      duration: duration,
+                      tween: currentIndex == index
+                          ? Tween(begin: 2, end: 1.3)
+                          : Tween(begin: 1, end: 1),
+                      builder: (context, value, child) {
+                        return Transform.scale(
+                          alignment: Alignment.center,
+                          scale: value,
+                          child: child,
+                        );
+                      },
+                      child: CustomWidgetCard(imagem: marvelModel.name)),
                 );
               }),
         ],
