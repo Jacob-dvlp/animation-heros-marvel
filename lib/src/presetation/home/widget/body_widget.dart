@@ -44,7 +44,7 @@ class _BodyWidgetState extends State<BodyWidget> {
                     curve: Curves.ease,
                     duration: duration,
                     tween: currentIndex == index
-                        ? Tween(begin: 1, end: 1.2)
+                        ? Tween(begin: 2, end: 1.4)
                         : Tween(begin: 1, end: 1),
                     builder: (context, value, child) {
                       return Transform.scale(
