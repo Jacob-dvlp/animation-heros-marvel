@@ -9,13 +9,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         actions: [
           const Icon(
             Icons.sort,
-            color: Colors.black,
+            color: Colors.white,
           ),
           const SizedBox(
             width: 85,
@@ -28,18 +30,12 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.all(5.0),
             child: Icon(
               Icons.search_outlined,
-              color: Colors.black,
+              color: Colors.white,
             ),
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [BodyWidget()],
-        ),
-      ),
+      body: const BodyWidget(),
     );
   }
 }
