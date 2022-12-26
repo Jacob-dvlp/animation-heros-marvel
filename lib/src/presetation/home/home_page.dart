@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/image/app_image.dart';
-import 'widget/header_widget.dart';
+import 'widget/body_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -35,13 +35,9 @@ class HomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Stack(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [HeaderWidget()],
-            ),
-          ],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [BodyWidget()],
         ),
       ),
     );
