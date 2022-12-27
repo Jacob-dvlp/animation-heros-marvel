@@ -2,6 +2,8 @@ import '../models/marvel_movies_model.dart';
 
 class Repository {
   List<MoviesMarvelModel> marvelModel = [
+    MoviesMarvelModel(name: "assets/herois/grinch-1.jpg"),
+    MoviesMarvelModel(name: "assets/herois/grinch-2.jpg"),
     MoviesMarvelModel(name: "assets/herois/captain-america-3.jpg"),
     MoviesMarvelModel(name: "assets/herois/avengers-3.jpg"),
     MoviesMarvelModel(name: "assets/herois/avengers-4.jpg"),
